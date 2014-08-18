@@ -112,8 +112,13 @@
 
 
 
-
+  <% referrals_count = @data.members.count %>
   <footer class="footer fix">
+    <% if referrals_count == 0 %>
+        <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
+    <% else %>
+        <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
+    <% end %>
     <div class="social fix">
       <ul>
         <li><a href="https://www.facebook.com/PossibilityWave"><img src="/assets/icon-facebook.png" alt=""></a></li>
