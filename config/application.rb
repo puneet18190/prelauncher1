@@ -61,7 +61,7 @@ module Prelaunchr
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
-     config.assets.precompile += %w[active_admin.css.scss active_admin.js style.css active_admin.js bootstrap.js jquery-1.9.1.min.js owl.carousel.js bootstrap.css core.css owl.carousel.css owl.theme.css active_admin.css]
+     config.assets.precompile += %w[active_admin.css.scss active_admin.js style.css active_admin.js bootstrap.js jquery-1.9.1.min.js owl.carousel.js bootstrap.css core.css owl.carousel.css owl.theme.css active_admin.css active_admin/print.css]
 
     config.ended = false
   end
