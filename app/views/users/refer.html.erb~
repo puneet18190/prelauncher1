@@ -28,11 +28,10 @@
           </form>
           <div class="share_section">
             <div class="share">Share &amp; Invite </div>
-            <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
-	    <div class="social" style="width:120px;">
+            <div class="social" style="width:120px;">
               <ul>
-                <li><a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"><img src="/assets/facebook1.png"></a></li>
-                <li><a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"><img src="/assets/twitter1.png"></a></li>
+                <li><a href="#"><img src="/assets/facebook1.png"></a></li>
+                <li><a href="#"><img src="/assets/twitter1.png"></a></li>
                 <li><a href="#"><img src="/assets/email1.png"></a></li>
               </ul>
             </div>
