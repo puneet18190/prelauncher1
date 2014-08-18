@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4075298048">
+    <data-source source="LOCAL" name="Rails prelaunchr: development" uuid="06700cf4-aea0-4744-b32f-1e07016417ab">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/prelaucher1</jdbc-url>
+      <user-name>user1</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails prelaunchr: test" uuid="2c844a6e-ffa1-4698-936d-4418d336dc6e">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/prelaucher1</jdbc-url>
+      <user-name>user1</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails prelaunchr: production" uuid="ea513e5a-8be9-462f-9516-65920cdb6364">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/prelaucher1</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

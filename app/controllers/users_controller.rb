@@ -71,8 +71,7 @@ class UsersController < ApplicationController
     end
 
     def refer
-      current_user = User.find(session[:user].to_i)
-      @data = current_user.members.count
+      @data = User.find(session[:user].to_i)
         email = cookies[:h_email]
 
         @bodyId = 'refer'
@@ -98,7 +97,8 @@ class UsersController < ApplicationController
     end
 
     def member
-	@user = User.find(session[:user].to_i)
+	current_user = User.find(session[:user].to_i)
+      @data = current_user.members
     end
 
     private 
