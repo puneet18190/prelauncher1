@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312045541) do
+ActiveRecord::Schema.define(:version => 20140818060418) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -68,6 +68,16 @@ ActiveRecord::Schema.define(:version => 20130312045541) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "members", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "friend_ref_id"
+    t.string   "friend_email"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "members", ["user_id"], :name => "index_members_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"

@@ -14,6 +14,9 @@ class ApplicationController < ActionController::Base
     protected
 
     def ref_to_cookie
+        if params.has_key?('ref')
+          session[:ref] = params[:ref]
+        end
         if params[:ref] && !Rails.application.config.ended
             if !User.find_by_referral_code(params[:ref]).nil?
                 cookies[:h_ref] = { :value => params[:ref], :expires => 1.week.from_now }
