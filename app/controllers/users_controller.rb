@@ -50,6 +50,8 @@ class UsersController < ApplicationController
             end
 
             @user.save
+	
+        end
 	session[:user] = @user.id
           if session.has_key?('ref')
             ref = session[:ref]
@@ -57,8 +59,6 @@ class UsersController < ApplicationController
             @data = User.find_by_referral_code(ref)
             @data.members.create(:friend_email => @user.email,:friend_ref_id => @user.referral_code)
           end
-        end
-
         # Send them over refer action
         respond_to do |format|
             if !@user.nil?
