@@ -1,88 +1,125 @@
-<div class="header">
-    <div class="content">
-        <p class="logo brandon">Harry&#8217;s</p>
-        <p class="byline brandon">THANK YOU FOR SIGNING UP</p>
-    </div>
-</div>
+<%= stylesheet_link_tag "owl.carousel.css", :media => "all" %>
+<%= stylesheet_link_tag "owl.theme.css", :media => "all" %>
 
-<div class="hero">
-    <div class="page-content clearfix">
-        <div class="mammoth">
-            <span class="need brandon">Shaving Is<br>Evolving</span>
+<header>
+  <div class="header_warper">
+    <div class="logo2 fix"><img src="/assets/logo.png" alt="Possibilitywave"></div>
+  </div>
+</header>
+
+<div class="content_area">
+  <section class="thanks_section fix">
+    <div class="thanks_joining">
+      <h1>Thanks for Joining!</h1>
+    </div>
+    <div class="thanks_banner">
+      <div class="thanks_banner_left">
+        <div class="middle_text_left">
+          <h1>Are You Ready For A New</h1>
+          <h2>Wave Of Possibilities?</h2>
         </div>
-        <div class="share-wrap">
-            <p class="why brandon">Don't leave your friends behind</p>
-            <p class="title brandon">INVITE FRIENDS &<br>Earn Product</p>
-            <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn Harry's goods for<br>each friend who signs up.</p>
-            <div class="copy-link brandon"><%= root_url %>?ref=<%= @user.referral_code %></div>
-            <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
-            <div class="social-links">
-                <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
-                <div class="sep"></div>
-                <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
+      </div>
+      <div class="thanks_banner_right">
+        <div class="middle_text_right">
+          <h1>Earn &amp; Learn - Get Rewarded</h1>
+          <p>Share your unique link below on Facebook Twitter or email and receive FREE Information Coded Biofeedback Products.</p>
+          <form action="">
+            <input class="affiliatecode" value=<%= root_url %>?ref=<%= @user.referral_code %> type="email">
+          </form>
+          <div class="share_section">
+            <div class="share">Share &amp; Invite </div>
+            <div class="social" style="width:120px;">
+              <ul>
+                <li><a href="#"><img src="/assets/facebook1.png"></a></li>
+                <li><a href="#"><img src="/assets/twitter1.png"></a></li>
+                <li><a href="#"><img src="/assets/email1.png"></a></li>
+              </ul>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </section>
 
-<% 
-    referrals_count = @user.referrals.count
 
-    stops = User::REFERRAL_STEPS
-
-    found = nil
-
-    stops.reverse_each { |stop|
-        if stop["count"] <= referrals_count and !found
-            stop["selected"] = true
-            found = stop
-        else
-            stop["selected"] = false
-        end
-    }   
- %>
-<div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
-    <div class="page-content">
-        <p class="callout brandon">Here's How It Works:</p>
-        <ul class="products clearfix">
-            <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Harry's Product</p></li>
-            <% stops.each do |stop| %>
-                <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
-                    <div class="circle"><%= stop["count"] %></div>
-                    <div class="sep"></div>
-                    <p><%= stop["html"].html_safe %></p>
-
-                    <div class="tooltip">
-                        <img src="<%= stop["image"] %>" height="254">
-                    </div>
-                </li>
-            <% end %>
-        </ul>
-
-        <div class="progress">
-            <div class="mover">
-                <div class="bar clearfix"></div>
-            </div>
+  <section class="thankyou-2nd">
+    <div class="thankyou-work">
+      <h1>here is how it works</h1>
+      <h2>Invite Your Friends - Share Your Passion - Earn Rewards - Learn Something New!</h2>
+      <div class="promoworks fix">
+        <div class="single-promoworks" style="float: left;width: 242px;margin-right: 10px;">
+          <h3>Friends Joined</h3>
+          <h4>Our Gift To You</h4>
         </div>
 
-        <% 
-            words = ''
-            if referrals_count == 1
-                words = 'friend has'
-            elsif 
-                words = 'friends have'
-            end
+        <div class="single-promoworks">
+          <h5>10</h5>
+          <h6>Dissolve Anxiety Coded Biofeedback Mindscape</h6>
+        </div>
 
-        %>
+        <div class="single-promoworks">
+          <h5>30</h5>
+          <h6>Clear Thinking Coded Biofeedback Mindscape</h6>
+        </div>
 
-        <% if referrals_count == 0 %>
-            <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
-        <% else %>
-            <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
-        <% end %>
-        <p class="check brandon">Keep checking</p>
-
-        <p class="ship brandon">We ship to the U.S. (& Canada Soon)</p>        
-        <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
+        <div class="single-promoworks" style="margin-right:0px;">
+          <h5>50</h5>
+          <h6>Pure Pleasure Coded Biofeedback Mindscape</h6>
+          <h6 style="padding-top: 10px;background: url(/assets/icon-comment2.png) no-repeat;margin-top: -2px;">Extra Bonus Sleepy Time Coded Biofeedback Mindscape</h6>
+        </div>
+      </div>
     </div>
+
+    <div class="promoworks2">
+      <h2><img src="/assets/icon-light.png" alt="">A multi modality clinically proven brain wave entrainment process delivered ocoustically through headphones.</h2>
+      <div class="slider">
+        <div class="owl-carousel owl-theme" style="opacity: 1; display: block;" id="owl-demo">
+          <div class="owl-wrapper-outer"><div style="width: 4000px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(-1000px, 0px, 0px);" class="owl-wrapper"><div style="width: 250px;" class="owl-item"><div class="item"><img src="/assets/iphone-slider.jpg" alt="Owl Image"></div></div><div style="width: 250px;" class="owl-item"><div class="item"><img src="/assets/iphone-slider.jpg" alt="Owl Image"></div></div><div style="width: 250px;" class="owl-item"><div class="item"><img src="/assets/iphone-slider.jpg" alt="Owl Image"></div></div><div style="width: 250px;" class="owl-item"><div class="item"><img src="/assets/iphone-slider.jpg" alt="Owl Image"></div></div><div style="width: 250px;" class="owl-item"><div class="item"><img src="/assets/iphone-slider.jpg" alt="Owl Image"></div></div><div style="width: 250px;" class="owl-item"><div class="item"><img src="/assets/iphone-slider.jpg" alt="Owl Image"></div></div><div style="width: 250px;" class="owl-item"><div class="item"><img src="/assets/iphone-slider.jpg" alt="Owl Image"></div></div><div style="width: 250px;" class="owl-item"><div class="item"><img src="/assets/iphone-slider.jpg" alt="Owl Image"></div></div></div></div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+      <script>
+//          $(document).ready(function() {
+//
+//              $("#owl-demo").owlCarousel({
+//
+//                  autoPlay: 3000, //Set AutoPlay to 3 seconds
+//                  pagination : false,
+//                  stopOnHover : true,
+//
+//                  items : 4,
+//                  itemsDesktop : [1199,3],
+//                  itemsDesktopSmall : [979,3]
+//
+//
+//
+//
+//              });
+//
+//          });
+      </script>
+    </div>
+  </section>
+
+
+
+
+
+  <footer class="footer fix">
+    <div class="social fix">
+      <ul>
+        <li><a href="https://www.facebook.com/PossibilityWave"><img src="/assets/icon-facebook.png" alt=""></a></li>
+        <li><a href="https://twitter.com/PossibleWaves"><img src="/assets/icon-twitter.png" alt=""></a></li>
+      </ul>
+    </div>
+    <div class="copyright">&copy; 2014 Possibility Wave. All right reserved.</div>
+  </footer>
 </div>
+

@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
     protected
 
     def ref_to_cookie
-	if params.has_key?('ref')
+	session.delete('ref')
+        if params.has_key?('ref')
           session[:ref] = params[:ref]
         end
         if params[:ref] && !Rails.application.config.ended

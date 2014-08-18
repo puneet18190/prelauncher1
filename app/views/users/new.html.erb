@@ -1,20 +1,50 @@
-<div class="hero">
-    <p class="large brandon">Harry&#8217;s is live</p>
-    <p class="small brandon">Respecting the Face and Wallet<br>Since Like...Right Now.</p>
-</div>
+<div class="content_area">
+  <div class="logo fix"><img src="/assets/logo.png" alt="Possibilitywave"></div>
 
-<div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
-    <% if Rails.application.config.ended %>
-        <p class="thanks brandon">THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH.</p>
-        <p class="compiling brandon">WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL<br/>COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO</p>
-        <p class="go-to brandon">In the meantime, head to  <a href="http://www.harrys.com/">WWW.HARRYS.COM</a></p>
-        <p class="again brandon">Thank You Again!</p>
-    <% else %>
-        <div class="key"></div>
-        <p class="byline brandon">Be the first to know</p>
+  <div class="banner_area fix">
+    <div class="banner_left">
+      <h2>Informed Interactivity</h2>
+      <h3>Tap Into Yourself. Tap Into Life</h3>
+      <h4>Explore the subtle dynamics of body mind energy spirit</h4>
+
+      <div class="subscribe">
+        <h5>Learn More</h5>
         <%= form_for @user, :url => { :action => "create" } do |f| %>
-            <%= f.text_field :email, :placeholder => "Enter Email", :class => "email brandon" %>
-            <input class="submit brandon" name="commit" type="submit" value="Step Inside" />
+            <%= f.text_field :email, :placeholder => "Your Email", :class => "subscribe-email" %>
+            <input name="submit" class="btn green" value="Submit" tabindex="503" type="submit">
         <% end %>
-    <% end %>
+
+        <!--<form action="">-->
+          <!--<input class="subscribe-email" name="email" placeholder="Your Email" type="text">-->
+          <!--<input name="submit" class="btn green" value="Submit" tabindex="503" type="submit">-->
+        <!--</form>-->
+      </div>
+
+      <div class="banner_bottom">
+        <ul>
+          <li>Possible &gt; </li>
+          <li>Probable &gt;</li>
+          <li>Certain</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="banner_right">
+      <p>Information Coded</p>
+      <p>Biofeedback</p>
+      <p>Apps</p>
+    </div>
+
+
+  </div>
+
+  <div class="footer fix">
+    <div class="social fix">
+      <ul>
+        <li><a href="https://www.facebook.com/PossibilityWave"><img src="/assets/refer/fb.png" alt=""></a></li>
+        <li><a href="https://twitter.com/PossibleWaves"><img src="/assets/refer/twit.png" alt=""></a></li>
+      </ul>
+    </div>
+    <div class="copyright">© 2014 Possibility Wave. All right reserved.</div>
+  </div>
 </div>

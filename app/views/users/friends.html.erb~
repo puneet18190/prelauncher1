@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "bootstrap.css", :media => "all" %>
+
+<div class="well container">
+<h2>Friends</h2>
+<% if @info.empty?%>
+  No Member
+<%else%>
+<table class="table table-striped">
+  <% @info.each do |ob| %>
+      <tr>
+        <td><%=ob.email%></td>
+      </tr>
+  <%end %>
+</table>
+</div>
+<%end%>

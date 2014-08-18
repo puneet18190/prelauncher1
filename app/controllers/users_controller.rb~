@@ -98,6 +98,13 @@ class UsersController < ApplicationController
     def member
 	current_user = User.find(session[:user].to_i)
       @data = current_user.members
+      @info = []
+      unless @data.empty?
+        @data.each do |a|
+          id = a.ref_id.to_i
+          @info << User.find(id)
+        end
+      end
     end
 
     private 
